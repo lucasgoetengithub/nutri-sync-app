@@ -24,7 +24,7 @@ export default function Routers() {
         <BrowserRouter>
         <Fragment>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
         </Fragment>
         </BrowserRouter>
