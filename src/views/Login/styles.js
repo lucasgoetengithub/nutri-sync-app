@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const Content = styled.div`
     position: absolute;
     top: 80px;
-    right: 580px;
+    right: 510px;
     h3 {
         position: relative;
         top: -10px;
@@ -42,4 +42,58 @@ export const Content = styled.div`
         width: 100%;
     }
     
+    link {
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: #676767;
+      }
+    }
+    
 `
+
+export const Panel1 = styled.div`
+  position: absolute;
+  top: 50px;
+  right: 613px;
+`
+
+export const Panel2 = styled.div`
+  position: absolute;
+  top: 300px;
+  right: 613px;
+`
+
+export const Panel3 = styled.div`
+  position: absolute;
+  top: 350px;
+  right: 650px;
+  button {
+    background-color: #B66DFF;
+    height: 50px;
+    color: white;
+    padding: 11px 15px;
+    border-radius: .1875rem;
+    border:none;
+    outline: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px lightgray;
+    transition: ease background-color 250ms;
+    font-size: .875rem;
+    font-weight: 700;
+    font-family: Ubuntu,sans-serif;
+    &:hover {
+      background-color: #1565c0;
+    }
+  }
+`
+
+export const Panel4 = styled.div`
+  position: absolute;
+  top: 430px;
+  right: 513px;
+`
+
+
