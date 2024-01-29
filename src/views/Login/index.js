@@ -41,10 +41,7 @@ const Login = () => {
                         />
                     </S.Panel1>
                     
-                    <S.Content>
-                        
-                       
-
+                    <S.Panel2>
                         <h2>Hello, lets get started </h2>
                         <h3>Sign in to continue</h3>
 
@@ -69,23 +66,23 @@ const Login = () => {
 
                         </Stack>                            
                         
-                    </S.Content>
-
-                    <S.Panel2>
-                        <Link to="/recoverpassword">Forgot password</Link>
                     </S.Panel2>
 
                     <S.Panel3>
+                        <Link to="/recoverpassword">Forgot password</Link>
+                    </S.Panel3>
+
+                    <S.Panel4>
                         <Stack width='820%' spacing={3.8} direction="column">
                             
                             <Button variant="primary" type="submit">Sign In</Button>
 
                         </Stack>     
-                    </S.Panel3>
-
-                    <S.Panel4>
-                        <Link classname="create" to="/register">Don't have an account? Create</Link>
                     </S.Panel4>
+
+                    <S.Panel5>
+                        <Link classname="create" to="/register">Don't have an account? Create</Link>
+                    </S.Panel5>
                 </Stack> 
             </S.Container>
         </>

@@ -18,9 +18,16 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Content = styled.div`
+export const Panel1 = styled.div`
+  position: absolute;
+  top: 50px;
+  right: 517px;
+  width : 30%;
+`
+
+export const Panel2 = styled.div`
     position: absolute;
-    top: 80px;
+    top: 130px;
     right: 510px;
     h3 {
         position: relative;
@@ -53,21 +60,15 @@ export const Content = styled.div`
     
 `
 
-export const Panel1 = styled.div`
-  position: absolute;
-  top: 50px;
-  right: 613px;
-`
-
-export const Panel2 = styled.div`
-  position: absolute;
-  top: 300px;
-  right: 613px;
-`
-
 export const Panel3 = styled.div`
   position: absolute;
-  top: 350px;
+  top: 390px;
+  right: 613px;
+`
+
+export const Panel4 = styled.div`
+  position: absolute;
+  top: 430px;
   right: 650px;
   button {
     background-color: #B66DFF;
@@ -85,14 +86,14 @@ export const Panel3 = styled.div`
     font-weight: 700;
     font-family: Ubuntu,sans-serif;
     &:hover {
-      background-color: #1565c0;
+      background-color: #A347FF;
     }
   }
 `
 
-export const Panel4 = styled.div`
+export const Panel5 = styled.div`
   position: absolute;
-  top: 430px;
+  top: 500px;
   right: 513px;
 `
 
