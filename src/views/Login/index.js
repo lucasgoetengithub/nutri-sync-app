@@ -5,24 +5,51 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import logoImage from '../../assets/logo.jpg';
+import api from '../../service/api';
 
 
 const Login = () => {
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() =>{
       
     });
 
     function handleKeyPress(event) {
-        console.log(event.key);
         if (event.key === "Enter") {
-          //handleSignin();
+          handleSignin();
         }
-      }
+    }
+
+    const handleSignin = async (event) => {
+      
+        if (!username || !password) {
+          setError("Preencha todos os campos");
+          return;
+        }
+  
+        var token = '';
+        await api.post(`/api/auth/`, {
+            username: username,
+            password: password
+        })
+        .then(response => {
+                    token = response.data;
+        }).catch(err => {
+            setError('Usuario nao encontrado')
+        })        
+  
+        console.log(token);
+        if (token) {
+            //await signin(email, token);
+            navigate('/home')
+        }
+          
+    };  
     
     
       
@@ -50,7 +77,7 @@ const Login = () => {
                                 required
                                 id="outlined-required"
                                 label="Username"
-                                onChange={(e) => [setEmail(e.target.value), setError("")]}
+                                onChange={(e) => [setUsername(e.target.value), setError("")]}
                             />
 
                             
@@ -60,13 +87,18 @@ const Login = () => {
                                 label="Password"
                                 type="password"
                                 autoComplete="current-password"
-                                onChange={(e) => [setSenha(e.target.value), setError("")]}
+                                onChange={(e) => [setPassword(e.target.value), setError("")]}
                                 onKeyPress={(event) => handleKeyPress(event)}
                             />
 
-                        </Stack>                            
+                            
+
+                        </Stack>         
+                        {error && <p style={{ color: 'red' }}>{error}</p>}                   
                         
                     </S.Panel2>
+
+                    
 
                     <S.Panel3>
                         <Link to="/recoverpassword">Forgot password</Link>
@@ -75,7 +107,7 @@ const Login = () => {
                     <S.Panel4>
                         <Stack width='820%' spacing={3.8} direction="column">
                             
-                            <Button variant="primary" type="submit">Sign In</Button>
+                            <Button variant="primary" type="submit" onClick={handleSignin}>Sign In</Button>
 
                         </Stack>     
                     </S.Panel4>

@@ -42,27 +42,12 @@ export const Panel2 = styled.div`
 
         font-size: 1.13rem;
     }
-    form {
-        margin-top: 20px;
-    }
-    .formLogin{
-        width: 100%;
-    }
-    
-    link {
-      cursor: pointer;
-
-      a {
-        text-decoration: none;
-        color: #676767;
-      }
-    }
     
 `
 
 export const Panel3 = styled.div`
   position: absolute;
-  top: 390px;
+  top: 400px;
   right: 613px;
 `
 
