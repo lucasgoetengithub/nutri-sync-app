@@ -51,23 +51,23 @@ export const Panel3 = styled.div`
     top: 560px;
     right: 650px;
     button {
-    background-color: #B66DFF;
-    height: 50px;
-    color: white;
-    padding: 11px 15px;
-    border-radius: .1875rem;
-    border:none;
-    outline: 0;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: 0px 2px 2px lightgray;
-    transition: ease background-color 250ms;
-    font-size: .875rem;
-    font-weight: 700;
-    font-family: Ubuntu,sans-serif;
-    &:hover {
-        background-color: #A347FF;
-    }
+        background-color: #B66DFF;
+        height: 50px;
+        color: white;
+        padding: 11px 15px;
+        border-radius: .1875rem;
+        border:none;
+        outline: 0;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0px 2px 2px lightgray;
+        transition: ease background-color 250ms;
+        font-size: .875rem;
+        font-weight: 700;
+        font-family: Ubuntu,sans-serif;
+        &:hover {
+            background-color: #A347FF;
+        }
     }
 `
 
