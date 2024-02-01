@@ -12,7 +12,9 @@ const Register = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
@@ -28,21 +30,39 @@ const Register = () => {
 
     const handleRegister = async (event) => {
       
-        // if (!username || !password) {
-        //   setError("Preencha todos os campos");
-        //   return;
-        // }
+        if (password != confirmPassword) {
+            setError("As senhas devem ser iguais");
+            return;
+        }
+
+        if (!username) {
+            setError("O campo username é obrigatório");
+            return;
+        }
   
-        // var token = '';
-        // await api.post(`/api/auth/`, {
-        //     username: username,
-        //     password: password
-        // })
-        // .then(response => {
-        //             token = response.data;
-        // }).catch(err => {
-        //     setError('Usuario nao encontrado')
-        // })        
+        if (!password) {
+            setError("O campo password é obrigatório");
+            return;
+        }
+
+        if (!confirmPassword) {
+            setError("O campo confirmPassword é obrigatório");
+            return;
+        }
+
+        if (!name) {
+            setError("O campo name é obrigatório");
+            return;
+        }
+        
+        await api.post(`/api/auth/`, {
+            username: username,
+            password: password
+        })
+        .then(response => {
+                    
+            setError('Usuario nao encontrado')
+        })        
   
         // console.log(token);
         // if (token) {
@@ -83,8 +103,15 @@ const Register = () => {
                             <TextField
                                 required
                                 id="outlined-required"
+                                label="Name"
+                                onChange={(e) => [setName(e.target.value), setError("")]}
+                            />
+
+                            <TextField
+                                required
+                                id="outlined-required"
                                 label="email"
-                                onChange={(e) => [setUsername(e.target.value), setError("")]}
+                                onChange={(e) => [setEmail(e.target.value), setError("")]}
                             />
 
                             
@@ -103,10 +130,8 @@ const Register = () => {
                                 label="Confirm password"
                                 type="password"
                                 autoComplete="current-password"
-                                onChange={(e) => [setPassword(e.target.value), setError("")]}
+                                onChange={(e) => [setConfirmPassword(e.target.value), setError("")]}
                             />
-
-                            
 
                         </Stack>                        
                         

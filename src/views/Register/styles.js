@@ -14,9 +14,9 @@ export const Container = styled.div`
   padding: 300px; 
   border-radius: 8px;
   width: 200px;
-  margin: 130px auto;
+  margin: 80px auto;
   position: relative;
-  height: 100px;
+  height: 190px;
 `;
 
 export const Panel1 = styled.div`
@@ -48,7 +48,7 @@ export const Panel2 = styled.div`
 
 export const Panel3 = styled.div`
     position: absolute;
-    top: 560px;
+    top: 640px;
     right: 650px;
     button {
         background-color: #B66DFF;
@@ -73,6 +73,6 @@ export const Panel3 = styled.div`
 
 export const Panel4 = styled.div`
 position: absolute;
-top: 620px;
+top: 700px;
 right: 505px;
 `
