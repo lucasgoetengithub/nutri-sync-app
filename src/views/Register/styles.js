@@ -73,6 +73,6 @@ export const Panel3 = styled.div`
 
 export const Panel4 = styled.div`
 position: absolute;
-top: 700px;
+top: 710px;
 right: 505px;
 `

@@ -55,13 +55,20 @@ const Register = () => {
             return;
         }
         
-        await api.post(`/api/auth/`, {
+        await api.post(`/api/users/`, {
             username: username,
+            email: email,
+            name: name,
             password: password
         })
         .then(response => {
-                    
-            setError('Usuario nao encontrado')
+            navigate('/login')
+        })
+        .catch(err => {
+            console.log(err.response.data)
+            if (err.response.data.email) {
+                setError("Este email ja foi utilizado.");
+            }   
         })        
   
         // console.log(token);
@@ -91,6 +98,7 @@ const Register = () => {
                     <S.Panel2>
                         <h2>New here? </h2>
                         <h3>Signing up is easy. It only take a few steps</h3>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}     
 
                         <Stack width='246%' spacing={3.8} direction="column">
                             <TextField
@@ -132,6 +140,7 @@ const Register = () => {
                                 autoComplete="current-password"
                                 onChange={(e) => [setConfirmPassword(e.target.value), setError("")]}
                             />
+                            
 
                         </Stack>                        
                         
@@ -139,13 +148,15 @@ const Register = () => {
 
                     <S.Panel3>
                         <Stack width='820%' spacing={3.8} direction="column">
-                            
+                            {error && <p style={{ color: 'red' }}> </p>}     
                             <Button variant="primary" type="submit" onClick={handleRegister}>Sign In</Button>
 
                         </Stack>     
                     </S.Panel3>
 
                     <S.Panel4>
+                        {error && <p style={{ color: 'red' }}>   </p>}     
+                        {error && <p style={{ color: 'red' }}> </p>}        
                         <Link classname="login" to="/login">Already have an account? Login</Link>
                     </S.Panel4>
 
