@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 import Login from '../views/Login';
-import Register from '../views/Register'
+import Register from '../views/Register';
+import Home from '../views/home';
 
 const Private = ({ Item }) => {
     // const user = JSON.parse(localStorage.getItem("user_token"));    
@@ -27,7 +28,7 @@ export default function Routers() {
                 <Routes>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
                 </Routes>
         </Fragment>
         </BrowserRouter>
