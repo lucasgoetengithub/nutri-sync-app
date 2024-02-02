@@ -16,14 +16,28 @@ const Home = () => {
       
     });
 
-    
-    
-    
-      
+
     return (
         <>
             <S.GlobalStyle />
-            
+            <S.Sidebar>
+                <S.Logo src={logoImage}></S.Logo>
+                <S.SidebarList>
+
+                    <S.SidebarItem>
+                        <Link to="/home">Home</Link>
+                    </S.SidebarItem>
+
+                    <S.SidebarItem>
+                        <Link to="/paciente">Paciente</Link>
+                    </S.SidebarItem>
+
+                    <S.SidebarItem>
+                        <Link to="/alimentos">Alimentos</Link>
+                    </S.SidebarItem>
+
+                </S.SidebarList>
+            </S.Sidebar>
             
         </>
     )
