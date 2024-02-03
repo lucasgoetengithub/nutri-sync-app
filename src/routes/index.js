@@ -30,7 +30,7 @@ export default function Routers() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/home" element={<Home />} />
-                    <Route path="/pacientes" element={<Patients />} />
+                    <Route path="/consultar-pacientes" element={<Patients />} />
                 </Routes>
         </Fragment>
         </BrowserRouter>

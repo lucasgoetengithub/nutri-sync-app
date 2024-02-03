@@ -143,6 +143,9 @@ const Patients = () => {
             </S.Sidebar>
                 
             <S.Painel1>
+                
+                <Stack width='80%' spacing={1} direction="column">
+                <h2>Filter patient by </h2>
                 <Stack width='80%' spacing={3.8} direction="row">
                     <S.StyledTextField
                         required
@@ -154,13 +157,15 @@ const Patients = () => {
                     <S.StyledTextField
                         required
                         id="outlined-required"
-                        label="Outro Campo"
+                        label="CPF"
                         onChange={(e) => [setName(e.target.value)]}
                     />
 
                     <Button variant="primary" type="submit" onClick={handleSignin}>Buscar</Button>
 
                 </Stack>
+                </Stack>
+                
             </S.Painel1>
 
             <S.Painel2>
