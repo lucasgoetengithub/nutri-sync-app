@@ -1,7 +1,5 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useEffect } from 'react';
 import * as S from './styles';
-import { Link} from "react-router-dom";
-import logoImage from '../../assets/logo.jpg';
 import SidebarHome from '../../components/SidebarHome';
 
 
