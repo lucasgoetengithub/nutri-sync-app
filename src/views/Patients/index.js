@@ -6,31 +6,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import logoImage from '../../assets/logo.jpg';
 import api from '../../service/api';
-// import { DataGrid, GridColumns, GridEventListener, GridCellParams } from '@mui/x-data-grid';
-// import { StyledEngineProvider } from '@mui/material/styles';
-
-// const columns: GridColumns = [
-//     { 
-//         field: "description", 
-//         headerName: "Alocação", 
-//         width: 180, 
-//         editable: true 
-//     },
-//     { 
-//         field: "percentage", 
-//         headerName: "Porcentagem %", 
-//         type: "number", 
-//         width: 180, 
-//         editable: true 
-//     },
-//     {
-//       field: "maxAmount",
-//       headerName: "Quantidade",
-//       type: "number",
-//       width: 150,
-//       editable: true
-//     }
-// ];
+import SidebarHome from '../../components/SidebarHome';
 
 const Patients = () => {
 
@@ -115,32 +91,7 @@ const Patients = () => {
     return (
         <>
             <S.GlobalStyle />
-            <S.Sidebar>
-                <S.Logo src={logoImage}></S.Logo>
-                <S.SidebarList>
-
-                    <S.SidebarItem>
-                        <Link to="/home">Home</Link>
-                    </S.SidebarItem>
-
-                    <S.SidebarItem>
-                        <Link to="/pacientes">Pacientes</Link>
-                    </S.SidebarItem>
-
-                    <S.SidebarItem>
-                        <Link to="/alimentos">Alimentos</Link>
-                    </S.SidebarItem>
-
-                    <S.SidebarItem>
-                        <Link to="/agenda">Agenda</Link>
-                    </S.SidebarItem>
-
-                    <S.SidebarItem>
-                        <Link to="/mensagens">Mensagens</Link>
-                    </S.SidebarItem>
-
-                </S.SidebarList>
-            </S.Sidebar>
+            <SidebarHome></SidebarHome>
                 
             <S.Painel1>
                 
