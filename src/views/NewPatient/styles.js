@@ -28,12 +28,28 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 width: 100%;
+button {
+  background: linear-gradient(90deg,#da8cff,#9a55ff);
+  height: 50px;
+  color: white;
+  padding: 11px 15px;
+  border-radius: .1875rem;
+  border:none;
+  outline: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgray;
+  transition: background-color 0.3s ease;
+  font-size: .875rem;
+  font-weight: 700;
+  font-family: Ubuntu,sans-serif;
+  &:hover {
+    background: linear-gradient(90deg, #c987ff, #8760ff);
+  }
 `;
 
 export const FieldTitle = styled.h2`
-  margin-bottom: 20px; /* Adicionando margem abaixo do título */
-`;
-
-export const FieldButton = styled(Button)`
-  margin-top: 20px; /* Adicionando margem acima do botão */
+  margin-bottom: 20px; 
+  
+}
 `;

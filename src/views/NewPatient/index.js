@@ -20,10 +20,13 @@ const NewPatient = () => {
                 <Stack width='600px' spacing={3.8} direction="column" margin='20px 10px 10px 40px'>
                     <S.Field>
                         <S.FieldTitle>Cadastrando novo paciente</S.FieldTitle>
-                        <S.FieldButton variant="primary" type="submit">
-                            Buscar
-                        </S.FieldButton>
+                        
                     </S.Field>
+
+                    <S.Field>
+                        <Button variant="primary" type="submit" >Cadastrar</Button>
+                    </S.Field>
+                    
                 </Stack>
                 
             </S.Container>
