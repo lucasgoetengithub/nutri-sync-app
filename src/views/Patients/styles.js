@@ -49,7 +49,7 @@ export const Painel1 = styled.div`
   margin: 50px auto;
   margin-left: 450px;
   position: relative;
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ export const Painel1 = styled.div`
     background-color: #B66DFF;
     height: 50px;
     color: white;
-    padding: 11px 15px;
+    padding: 8px 8px;
     border-radius: .1875rem;
     border:none;
     outline: 0;
@@ -88,6 +88,7 @@ export const Painel2 = styled.div`
   margin-left: 450px;
   position: relative;
   height: 500px;
+  font-family: Ubuntu,sans-serif;
 `;
 
 export const DataGridContainer = styled.div`

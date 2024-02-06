@@ -75,13 +75,14 @@ const NewPatient = () => {
             "occupation": cargo,
             "obs": observation,
             "phoneContact": contato,
-            "gender": gender
+            "gender": gender,
+            "nutriID":1
         })
         .then(response => {
             navigate('/home')
         })
         .catch(err => {
-            
+            console.log(err)
         })    
     }
 
