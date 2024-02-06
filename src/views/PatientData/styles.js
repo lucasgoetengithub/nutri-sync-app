@@ -8,3 +8,15 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Ubuntu',sans-serif;
   }
 `;
+
+export const Painel1 = styled.div`
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 45%;
+  margin: 90px auto;
+  margin-left: 30%;
+  position: relative;
+  height: 800px;
+  display: flex;
+  justify-content: flex-start;
+`;
