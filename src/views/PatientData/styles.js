@@ -18,5 +18,5 @@ export const Painel1 = styled.div`
   position: relative;
   height: 800px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 `;
