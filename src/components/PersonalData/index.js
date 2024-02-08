@@ -1,8 +1,59 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styles';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import { Button } from 'react-bootstrap';
+import InputMask from 'react-input-mask';
+import api from '../../service/api';
 
 
 const PersonalData = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [age, setAge] = useState("");
+    const [dateBirth, setDateBirth] = useState("");
+    const [address, setAddress] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
+    const [contato, setContato] = useState("");
+    const [gender, setGender] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [cargo, setCargo] = useState("");
+    const [observation, setObservation] = useState("");
+
+    function convertDateFormat(inputDate) {
+        const [day, month, year] = inputDate.split('/');
+        const formattedDate = `${year}-${month}-${day}`;
+        return formattedDate;
+    }
+
+    const handleRegister = async (event) => {
+        
+        let datevar = convertDateFormat(dateBirth);
+
+        // await api.post(`/api/patients/`, {
+        //     "username": username,
+        //     "name": name,
+        //     "email": email,
+        //     "password": password,
+        //     "age": age,
+        //     "dateOfBirth": datevar,
+        //     "address": address,
+        //     "city": cidade,
+        //     "occupation": cargo,
+        //     "obs": observation,
+        //     "phoneContact": contato,
+        //     "gender": gender,
+        //     "nutriID":1
+        // })
+        // .then(response => {
+            
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })    
+    }
      
     useEffect(() =>{
       
@@ -12,12 +63,11 @@ const PersonalData = () => {
     return (
         <>
             <S.GlobalStyle />
-                <Stack width='600px' spacing={2} direction="column" margin='20px 10px 10px 40px'>
-                    <S.Field>
-                        <S.FieldTitle>Cadastrando novo paciente</S.FieldTitle>
-                    </S.Field>
+                <Stack width='600px' spacing={2} direction="column" margin='00px 10px 10px 40px'>
+                    
+                    <S.FieldTitle>Dados do paciente</S.FieldTitle>
 
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
+                    <Stack width='600px' spacing={5} direction="row" margin='0px 0px 0px 40px'>
                         <S.Field>
                             <S.Label><h5>Nome </h5></S.Label>
 
@@ -151,7 +201,7 @@ const PersonalData = () => {
                     </Stack>
 
                     <S.Field>
-                        <Button variant="primary" type="submit" onClick={handleRegister}>Cadastrar</Button>
+                        <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
                     </S.Field>
                 </Stack>     
         </>

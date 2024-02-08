@@ -7,7 +7,9 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Box from '@mui/material/Box';
-import styled, { createGlobalStyle } from 'styled-components';
+import PersonalData from '../../components/PersonalData';
+import Medidas from '../../components/Medidas';
+
 
 
 const PatientData = () => {
@@ -20,9 +22,9 @@ const PatientData = () => {
         setValue(newValue);
 
         if (newValue === '1') {
-            setPanelHeight(800); 
+            setPanelHeight(1200); 
         } else if (newValue === '2') {
-            setPanelHeight(1000); 
+            setPanelHeight(800); 
         } else if (newValue === '3') {
             setPanelHeight(1200); 
         }
@@ -47,17 +49,17 @@ const PatientData = () => {
                                 <S.StyledTab label="Dados Pessoais" value="1" style={{ color: value === '1' ? '#B66DFF' : '' }}/>
                                 <S.StyledTab label="Medidas" value="2" style={{ color: value === '2' ? '#B66DFF' : '' }}/>
                                 <S.StyledTab label="Bioimpedância" value="3" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Dieta" value="4" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Histórico" value="5" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Dieta" value="4" style={{ color: value === '4' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Histórico" value="5" style={{ color: value === '5' ? '#B66DFF' : '' }}/>
                             </TabList>
                         </Box>
 
                         <TabPanel value="1">
-                            Item One
+                            <PersonalData></PersonalData>
                         </TabPanel>
                         
                         <TabPanel value="2">
-                            Item Two
+                            <Medidas></Medidas>
                         </TabPanel>
                         
                         <TabPanel value="3">
