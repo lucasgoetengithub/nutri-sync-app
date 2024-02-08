@@ -24,8 +24,8 @@ export const SidebarList = styled.ul`
 `;
 
 export const SidebarItem = styled.li`
-  margin-bottom: 40px; /* Espaçamento vertical entre os itens */
-  color: ${(props) => (props.isMenuOpen ? '#suaCorAqui' : '#576371')};
+  margin-bottom: 40px;
+  color: ${(props) => (props.isMenuOpen ? '#576371' : '#576371')};
   
 `;
 

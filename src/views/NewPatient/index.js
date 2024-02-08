@@ -106,7 +106,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Nome"
                                 onChange={(e) => [setName(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '500px' }} 
                             />
                         </S.Field>
 
@@ -118,7 +118,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Gênero"
                                 onChange={(e) => [setGender(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '200px' }}
                             />
                         </S.Field>
                     </Stack>
@@ -131,7 +131,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Email"
                                 onChange={(e) => [setEmail(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '500px' }} 
                             />
                                 
                         </S.Field>
@@ -174,7 +174,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Idade"
                                 onChange={(e) => [setAge(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '200px' }}
                             />
                         </S.Field>
                     </Stack>
@@ -188,7 +188,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Endereço"
                                 onChange={(e) => [setAddress(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '500px' }}
                             />
                         </S.Field>
 
@@ -200,7 +200,7 @@ const NewPatient = () => {
                                 id="outlined-required"
                                 label="Cidade"
                                 onChange={(e) => [setCidade(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}  // Adicione esta linha para definir a largura
+                                sx={{ width: '200px' }}
                             />
                         </S.Field>
                     </Stack>
@@ -213,7 +213,7 @@ const NewPatient = () => {
                             id="outlined-required"
                             label="Emprego / Cargo "
                             onChange={(e) => [setCargo(e.target.value), setError("")]}
-                            sx={{ width: '500px' }}  // Adicione esta linha para definir a largura
+                            sx={{ width: '500px' }}
                         />
                     </S.Field>
 
@@ -222,7 +222,7 @@ const NewPatient = () => {
                         <S.Label><h5>Observação</h5></S.Label>
                         <TextField
                         multiline
-                        rows={9} // você pode ajustar o número de linhas conforme necessário
+                        rows={9}
                         id="outlined-multiline"
                         label="Observação"
                         onChange={(e) => [setObservation(e.target.value), setError("")]}

@@ -23,7 +23,7 @@ export const Container = styled.div`
 `;
 
 export const Field = styled.div`
-  margin: 90px 20px 90px 40px; /* Ajuste conforme necessário */
+  margin: 90px 20px 90px 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

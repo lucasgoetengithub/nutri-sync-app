@@ -85,7 +85,7 @@ const Register = () => {
                         <img
                             src={logoImage}
                             alt="Descrição da imagem"
-                            style={{ width: '50%', marginBottom: '0px' }} // Ajuste o estilo conforme necessário
+                            style={{ width: '50%', marginBottom: '0px' }}
                         />
                     </S.Panel1>
                     

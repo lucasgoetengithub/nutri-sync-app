@@ -34,7 +34,7 @@ export const SidebarList = styled.ul`
 `;
 
 export const SidebarItem = styled.li`
-  margin-bottom: 30px; /* Espaçamento vertical entre os itens */
+  margin-bottom: 30px;
 `;
 
 export const Logo = styled.img`
@@ -119,6 +119,6 @@ export const TableCell = styled.td`
 `;
 
 export const StyledTextField = styled(TextField)`
-  width: 500px;  // Ajuste o valor conforme necessário
-  margin-right: 20px;  // Ajuste o valor conforme necessário
+  width: 500px;
+  margin-right: 20px;
 `;
