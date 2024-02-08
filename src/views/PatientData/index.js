@@ -44,9 +44,11 @@ const PatientData = () => {
                     <TabContext value={value}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                <S.StyledTab label="Item One" value="1" style={{ color: value === '1' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Item Two" value="2" style={{ color: value === '2' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Item Three" value="3" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Dados Pessoais" value="1" style={{ color: value === '1' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Medidas" value="2" style={{ color: value === '2' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Bioimpedância" value="3" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Dieta" value="4" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Histórico" value="5" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
                             </TabList>
                         </Box>
 
@@ -59,6 +61,14 @@ const PatientData = () => {
                         </TabPanel>
                         
                         <TabPanel value="3">
+                            Item Three
+                        </TabPanel>
+
+                        <TabPanel value="4">
+                            Item Three
+                        </TabPanel>
+
+                        <TabPanel value="5">
                             Item Three
                         </TabPanel>
                     </TabContext>
