@@ -1,13 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import SidebarHome from '../../components/SidebarHome';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import { Button } from 'react-bootstrap';
+import api from '../../service/api';
 
 
-const Home = () => {
-     
+const Bioimpedancia = () => {
+    const [peso, setPeso] = useState("");
+    const [imc, setIMC] = useState("");
+    const [gorduraCorporal, setGorduraCorporal] = useState("");
+    const [taxaMuscular, setTaxaMuscular] = useState("");
+    const [massaLivreDeGordura, setMassaLivreDeGordura] = useState(""); 
+    const [gorduraSubCutanea, setGorduraSubCutanea] = useState("");
+    const [gorduraVisceral, setGorduraVisceral] = useState("");
+    const [aguaCorporal, setAguaCorporal] = useState("");
+    const [massaMuscularEsqueletica, setMassaMuscularEsqueletica] = useState("");
+    const [massaMuscular, setMassaMuscular] = useState("");
+    const [massaOssea, setMassaOssea] = useState("");
+    const [proteina, setProteina] = useState("");
+    const [taxaMetabolicaBasal, setTaxaMetabolicaBasal] = useState("");
+    const [error, setError] = useState("");
+
+
     useEffect(() =>{
       
     });
+
+    const handleRegister = async (event) => {
+
+        
+    }
 
 
     return (
@@ -15,118 +38,179 @@ const Home = () => {
             <S.GlobalStyle />    
             <S.FieldTitle>Bioimpedância</S.FieldTitle>
 
-                <Stack width='600px' spacing={5} direction="column" margin='0px 0px 0px 40px'>
-                    <Stack width='600px' spacing={5} direction="row">
-                        <S.Field>
-                            <S.Label><h5>Ombro </h5></S.Label>
-
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Ombro (cm)"
-                                onChange={(e) => [setTorax(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
-
-                        </S.Field>
-
-                        <S.Field>
-                            <S.Label><h5>Torax </h5></S.Label>
-
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Torax (cm)"
-                                onChange={(e) => [setTorax(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
-
-                        </S.Field>
-                    </Stack>
+                <Stack width='600px' spacing={5} direction="column">
                     
-                    <Stack width='600px' spacing={5} direction="row">
-                        <S.Field>
-                            <S.Label><h5>Braco </h5></S.Label>
+                    <S.Field>
+                        <S.Label><h5>Peso</h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Braco (cm)"
-                                onChange={(e) => [setBraco(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Peso (kg)"
+                            onChange={(e) => [setPeso(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
+                    </S.Field>
 
-                        <S.Field>
-                            <S.Label><h5>Antebraço </h5></S.Label>
+                    <S.Field>
+                        <S.Label><h5>IMC</h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Antebraço (cm)"
-                                onChange={(e) => [setAntebraco(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="IMC"
+                            onChange={(e) => [setIMC(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
-                    </Stack>
+                    </S.Field>
                     
-                    <Stack width='600px' spacing={5} direction="row">
-                        <S.Field>
-                            <S.Label><h5>Cintura </h5></S.Label>
+                
+                    <S.Field>
+                        <S.Label><h5>Gordura Corporal</h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Cintura (cm)"
-                                onChange={(e) => [setCintura(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Gordura Corporal (%)"
+                            onChange={(e) => [setGorduraCorporal(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
+                    </S.Field>
 
-                        <S.Field>
-                            <S.Label><h5>Quadril </h5></S.Label>
+                    <S.Field>
+                        <S.Label><h5>Taxa Muscular</h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Quadril (cm)"
-                                onChange={(e) => [setQuadril(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Taxa Muscular (%)"
+                            onChange={(e) => [setTaxaMuscular(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
-                    </Stack>
+                    </S.Field>
                     
-                    <Stack width='600px' spacing={5} direction="row">
-                        <S.Field>
-                            <S.Label><h5>Coxa </h5></S.Label>
+                    
+                    <S.Field>
+                        <S.Label><h5>Massa livre de gordura </h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Coxa (cm)"
-                                onChange={(e) => [setCoxa(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Massa livre de gordura (Kg)"
+                            onChange={(e) => [setMassaLivreDeGordura(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
+                    </S.Field>
 
-                        <S.Field>
-                            <S.Label><h5>Panturrilha </h5></S.Label>
+                    <S.Field>
+                        <S.Label><h5>Gordura subcutanea</h5></S.Label>
 
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Panturrilha (cm)"
-                                onChange={(e) => [setPanturrilha(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Gordura subcutanea (%)"
+                            onChange={(e) => [setGorduraSubCutanea(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
 
-                        </S.Field>
-                    </Stack>
+                    </S.Field>
+                    
+                    
+                    <S.Field>
+                        <S.Label><h5>Gordura visceral</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Gordura visceral"
+                            onChange={(e) => [setGorduraVisceral(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Água corporal</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Água corporal (%)"
+                            onChange={(e) => [setAguaCorporal(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Massa muscular esquelética</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Massa muscular esquelética (%)"
+                            onChange={(e) => [setMassaMuscularEsqueletica(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Massa muscular</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Massa muscular (kg)"
+                            onChange={(e) => [setMassaMuscular(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Massa óssea</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Massa óssea (%)"
+                            onChange={(e) => [setMassaOssea(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Proteina</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Proteina (%)"
+                            onChange={(e) => [setProteina(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Taxa metabolica basal</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Taxa metabolica basal (kcal)"
+                            onChange={(e) => [setTaxaMetabolicaBasal(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
                 
                     <S.Field>
                         <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
@@ -137,4 +221,4 @@ const Home = () => {
   
   }
   
-  export default Home;
+  export default Bioimpedancia;

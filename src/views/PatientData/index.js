@@ -9,6 +9,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Box from '@mui/material/Box';
 import PersonalData from '../../components/PersonalData';
 import Medidas from '../../components/Medidas';
+import Bioimpedancia from '../../components/Bioimpedancia';
 
 
 
@@ -63,7 +64,7 @@ const PatientData = () => {
                         </TabPanel>
                         
                         <TabPanel value="3">
-                            Item Three
+                            <Bioimpedancia></Bioimpedancia>
                         </TabPanel>
 
                         <TabPanel value="4">

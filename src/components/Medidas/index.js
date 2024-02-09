@@ -3,7 +3,6 @@ import * as S from './styles';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
-import InputMask from 'react-input-mask';
 import api from '../../service/api';
 
 
