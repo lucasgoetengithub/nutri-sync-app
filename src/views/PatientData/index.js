@@ -27,6 +27,10 @@ const PatientData = () => {
         } else if (newValue === '2') {
             setPanelHeight(800); 
         } else if (newValue === '3') {
+            setPanelHeight(2150); 
+        } else if (newValue === '4') {
+            setPanelHeight(1200); 
+        } else if (newValue === '5') {
             setPanelHeight(1200); 
         }
     };
