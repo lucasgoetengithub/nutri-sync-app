@@ -54,8 +54,9 @@ const PatientData = () => {
                                 <S.StyledTab label="Dados Pessoais" value="1" style={{ color: value === '1' ? '#B66DFF' : '' }}/>
                                 <S.StyledTab label="Medidas" value="2" style={{ color: value === '2' ? '#B66DFF' : '' }}/>
                                 <S.StyledTab label="Bioimpedância" value="3" style={{ color: value === '3' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Dieta" value="4" style={{ color: value === '4' ? '#B66DFF' : '' }}/>
-                                <S.StyledTab label="Histórico" value="5" style={{ color: value === '5' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Dobras cutaneas" value="4" style={{ color: value === '4' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Dieta" value="5" style={{ color: value === '5' ? '#B66DFF' : '' }}/>
+                                <S.StyledTab label="Historico" value="6" style={{ color: value === '6' ? '#B66DFF' : '' }}/>
                             </TabList>
                         </Box>
 
@@ -76,6 +77,10 @@ const PatientData = () => {
                         </TabPanel>
 
                         <TabPanel value="5">
+                            Item Three
+                        </TabPanel>
+
+                        <TabPanel value="6">
                             Item Three
                         </TabPanel>
                     </TabContext>
