@@ -37,26 +37,26 @@ const Dobras = () => {
                 <Stack width='600px' spacing={5} direction="column">
                     
                     <S.Field>
-                        <S.Label><h5>Peso</h5></S.Label>
+                        <S.Label><h5>Triceps</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="Peso (kg)"
-                            onChange={(e) => [setPeso(e.target.value), setError("")]}
+                            label="Triceps"
+                            onChange={(e) => [setTriceps(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
                     </S.Field>
 
                     <S.Field>
-                        <S.Label><h5>IMC</h5></S.Label>
+                        <S.Label><h5>Subescapular</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="IMC"
-                            onChange={(e) => [setIMC(e.target.value), setError("")]}
+                            label="Subescapular"
+                            onChange={(e) => [setSubescapular(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
@@ -64,53 +64,26 @@ const Dobras = () => {
                     
                 
                     <S.Field>
-                        <S.Label><h5>Gordura Corporal</h5></S.Label>
+                        <S.Label><h5>Biceps</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="Gordura Corporal (%)"
-                            onChange={(e) => [setGorduraCorporal(e.target.value), setError("")]}
+                            label="Biceps"
+                            onChange={(e) => [setBiceps(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
                     </S.Field>
 
                     <S.Field>
-                        <S.Label><h5>Taxa Muscular</h5></S.Label>
+                        <S.Label><h5>Axiliar média</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="Taxa Muscular (%)"
-                            onChange={(e) => [setTaxaMuscular(e.target.value), setError("")]}
-                            sx={{ width: '500px' }}
-                        />
-
-                    </S.Field>
-                    
-                    
-                    <S.Field>
-                        <S.Label><h5>Massa livre de gordura </h5></S.Label>
-
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Massa livre de gordura (Kg)"
-                            onChange={(e) => [setMassaLivreDeGordura(e.target.value), setError("")]}
-                            sx={{ width: '500px' }}
-                        />
-
-                    </S.Field>
-
-                    <S.Field>
-                        <S.Label><h5>Gordura subcutanea</h5></S.Label>
-
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Gordura subcutanea (%)"
-                            onChange={(e) => [setGorduraSubCutanea(e.target.value), setError("")]}
+                            label="Axiliar média"
+                            onChange={(e) => [setAxiliarMedia(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
@@ -118,26 +91,66 @@ const Dobras = () => {
                     
                     
                     <S.Field>
-                        <S.Label><h5>Gordura visceral</h5></S.Label>
+                        <S.Label><h5>Toracica</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="Gordura visceral"
-                            onChange={(e) => [setGorduraVisceral(e.target.value), setError("")]}
+                            label="Toracica"
+                            onChange={(e) => [setToracica(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
                     </S.Field>
 
                     <S.Field>
-                        <S.Label><h5>Água corporal</h5></S.Label>
+                        <S.Label><h5>Supra iliaca</h5></S.Label>
 
                         <TextField
                             required
                             id="outlined-required"
-                            label="Água corporal (%)"
-                            onChange={(e) => [setAguaCorporal(e.target.value), setError("")]}
+                            label="Supra iliaca"
+                            onChange={(e) => [setSupraIliaca(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+                    
+                    
+                    <S.Field>
+                        <S.Label><h5>Supra espinhal</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Supra espinhal"
+                            onChange={(e) => [setSupraEspinal(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Coxa</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Coxa"
+                            onChange={(e) => [setCoxa(e.target.value), setError("")]}
+                            sx={{ width: '500px' }}
+                        />
+
+                    </S.Field>
+
+                    <S.Field>
+                        <S.Label><h5>Panturrilha medial</h5></S.Label>
+
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Panturrilha medial"
+                            onChange={(e) => [setPanturrilhaMedial(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
 
