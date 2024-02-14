@@ -153,7 +153,6 @@ const Dobras = () => {
                             onChange={(e) => [setPanturrilhaMedial(e.target.value), setError("")]}
                             sx={{ width: '500px' }}
                         />
-
                     </S.Field>
 
                     
