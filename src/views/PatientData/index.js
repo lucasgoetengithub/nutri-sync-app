@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import PersonalData from '../../components/PersonalData';
 import Medidas from '../../components/Medidas';
 import Bioimpedancia from '../../components/Bioimpedancia';
+import Dobras from '../../components/Dobras';
 
 
 
@@ -29,7 +30,7 @@ const PatientData = () => {
         } else if (newValue === '3') {
             setPanelHeight(2150); 
         } else if (newValue === '4') {
-            setPanelHeight(1200); 
+            setPanelHeight(1600); 
         } else if (newValue === '5') {
             setPanelHeight(1200); 
         }
@@ -73,7 +74,7 @@ const PatientData = () => {
                         </TabPanel>
 
                         <TabPanel value="4">
-                            Item Three
+                            <Dobras></Dobras>
                         </TabPanel>
 
                         <TabPanel value="5">
