@@ -16,6 +16,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
 import Autocomplete from '@mui/material/Autocomplete';
 import api from '../../service/api';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -54,7 +55,11 @@ const PatientData = () => {
         console.log(quantidadeRefeicoes)
         if (quantidadeRefeicoes && quantidadeRefeicoes >= 1) {
             setMostrarCampos(true);
-            setQuantidadeCampos(parseInt(quantidadeRefeicoes))
+            setQuantidadeCampos(parseInt(quantidadeRefeicoes));
+            const newPanelHeight = 400 + quantidadeCampos * 420;
+            setPanelHeight(newPanelHeight);
+            console.log(panelHeight);
+            setValue("5");
         }
     }
 
@@ -64,16 +69,23 @@ const PatientData = () => {
     }
 
     
-    useEffect(() =>{
-      
-    });
+    useEffect(() => {
+        const updatePanelSize = () => {
+            const panel = document.getElementById('panel1'); // Altere 'panel1' para o id correto do seu painel
+            if (panel) {
+                panel.style.height = `${panelHeight}px`;
+            }
+        };
+
+        updatePanelSize(); 
+    }, [panelHeight]);
 
 
     return (
         <>
             <S.GlobalStyle />
             <SidebarHome></SidebarHome>       
-            <S.Painel1 style={{ height: panelHeight }}>
+            <S.Painel1 id="panel1" style={{ height: panelHeight }}>
                 <Box sx={{ width: '100%', typography: 'body1' }}>
                     <TabContext value={value}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -131,7 +143,7 @@ const PatientData = () => {
                                     [...Array(quantidadeCampos)].map((_, index) => (
                                         
                                     <>
-                                        <Stack width='600px' spacing={1} direction="column">
+                                        <Stack width='80%' spacing={1} direction="column">
                                             <S.Field key={index}>
                                                 
                                                 <S.Label><h5>Refeição </h5></S.Label>
@@ -146,27 +158,44 @@ const PatientData = () => {
                                                 
                                             </S.Field>
 
-                                            <S.FieldSelect key={index}>
-                                                <S.Label><h5>Alimento </h5></S.Label>
-                                                <Stack width='600px' spacing={1} direction="row">
-                                                    <Autocomplete
-                                                    disablePortal
-                                                    id="combo-box-demo"
-                                                    options={top100Films}
-                                                    sx={{ width: 300 }}
-                                                    renderInput={(params) => <TextField {...params} label="Alimento" />}
+                                            <Stack width='600px' spacing={1} direction="collumn">
+                                                <S.Field key={index}>
+                                                    
+                                                    <S.Label><h5>Porção (g) </h5></S.Label>
+                                                    <TextField
+                                                        required
+                                                        id='outlined-required'
+                                                        label='Porção (g) '
+                                                        onChange={(e) => handleInputChange(`campo${index + 1}`, e.target.value)}
+                                                        sx={{ width: '100px'}}
                                                     />
-                                                    <S.Field>
-                                                        <Button variant="primary" type="submit" onClick={handleRegister}>Adicionar</Button>
-                                                    </S.Field>
-                                                </Stack>
-                                            </S.FieldSelect>
+
+                                                    
+                                                </S.Field>
+
+                                                <S.FieldSelect key={index}>
+                                                    <S.Label><h5>Alimento </h5></S.Label>
+                                                    <Stack width='490px' spacing={1} direction="row">
+                                                        <Autocomplete
+                                                        disablePortal
+                                                        id="combo-box-demo"
+                                                        options={top100Films}
+                                                        sx={{ width: '650px' }}
+                                                        renderInput={(params) => <TextField {...params} label="Alimento" />}
+                                                        />
+                                                        <S.Field>
+                                                            <Button variant="primary" type="submit" onClick={handleRegister}>Adicionar</Button>
+                                                        </S.Field>
+                                                    </Stack>
+                                                </S.FieldSelect>
+                                            </Stack>
+                                            
 
                                             <S.Field>
                                                 <S.Label><h5>Refeição</h5></S.Label>
                                                 <TextField
                                                     multiline
-                                                    rows={3} 
+                                                    rows={5} 
                                                     id="outlined-multiline"
                                                     label="Refeição"
                                                     //onChange={(e) => [setObservation(e.target.value), setError("")]}
