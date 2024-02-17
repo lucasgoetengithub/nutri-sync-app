@@ -116,7 +116,7 @@ const PatientData = () => {
                         </TabPanel>
 
                         <TabPanel value="5">
-                            <S.FieldTitle>Bioimpedância</S.FieldTitle>
+                            <S.FieldTitle>Dieta</S.FieldTitle>
 
                             <Stack width='600px' spacing={5} direction="column">
                                 
