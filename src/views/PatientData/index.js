@@ -52,16 +52,18 @@ const PatientData = () => {
 
     const handleRegister = async (event) => {
         setMostrarCampos(false);
-        console.log(quantidadeRefeicoes)
         if (quantidadeRefeicoes && quantidadeRefeicoes >= 1) {
             setMostrarCampos(true);
-            setQuantidadeCampos(parseInt(quantidadeRefeicoes));
-            const newPanelHeight = 400 + quantidadeCampos * 420;
-            setPanelHeight(newPanelHeight);
-            console.log(panelHeight);
-            setValue("5");
+            setQuantidadeCampos((prevQuantidadeCampos) => {
+                const newQuantidadeCampos = parseInt(quantidadeRefeicoes);
+                setPanelHeight((prevPanelHeight) => {
+                    const newPanelHeight = 400 + newQuantidadeCampos * 420;
+                    return newPanelHeight;
+                });
+                return newQuantidadeCampos;
+            });
         }
-    }
+    };
 
     const handleInputChange = (field, value) => {
         setFormData({ ...formData, [field]: value });
@@ -70,14 +72,12 @@ const PatientData = () => {
 
     
     useEffect(() => {
-        const updatePanelSize = () => {
-            const panel = document.getElementById('panel1'); // Altere 'panel1' para o id correto do seu painel
-            if (panel) {
-                panel.style.height = `${panelHeight}px`;
-            }
-        };
+        if (value == 5) {
+            handleRegister();
+        }
+        
+        
 
-        updatePanelSize(); 
     }, [panelHeight]);
 
 
@@ -113,7 +113,7 @@ const PatientData = () => {
 
                         <TabPanel value="4">
                             <Dobras></Dobras>
-                        </TabPanel>
+                        </TabPanel> 
 
                         <TabPanel value="5">
                             <S.FieldTitle>Dieta</S.FieldTitle>
