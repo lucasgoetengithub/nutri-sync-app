@@ -57,7 +57,7 @@ const PatientData = () => {
             setQuantidadeCampos((prevQuantidadeCampos) => {
                 const newQuantidadeCampos = parseInt(quantidadeRefeicoes);
                 setPanelHeight((prevPanelHeight) => {
-                    const newPanelHeight = 400 + newQuantidadeCampos * 420;
+                    const newPanelHeight = 400 + newQuantidadeCampos * 465;
                     return newPanelHeight;
                 });
                 return newQuantidadeCampos;
@@ -72,12 +72,9 @@ const PatientData = () => {
 
     
     useEffect(() => {
-        if (value == 5) {
-            handleRegister();
+        if (value === '1') {
+            setPanelHeight(1200);
         }
-        
-        
-
     }, [panelHeight]);
 
 
