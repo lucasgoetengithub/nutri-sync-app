@@ -57,7 +57,12 @@ const PatientData = () => {
             setQuantidadeCampos((prevQuantidadeCampos) => {
                 const newQuantidadeCampos = parseInt(quantidadeRefeicoes);
                 setPanelHeight((prevPanelHeight) => {
-                    const newPanelHeight = 400 + newQuantidadeCampos * 465;
+                    let newPanelHeight = 0;
+                    newPanelHeight = 400 + newQuantidadeCampos * 465;
+                    if (newQuantidadeCampos && newQuantidadeCampos > 0) {
+                        newPanelHeight = 400 + (newQuantidadeCampos * 465) + 2000;
+                    } 
+                    
                     return newPanelHeight;
                 });
                 return newQuantidadeCampos;
@@ -203,12 +208,27 @@ const PatientData = () => {
                                         </Stack>
                                         
 
+                                        
                                     </>
-                                        
-
-                                        
                                     ))
+                                )
+                                }
+
+                                {mostrarCampos && (
+                                     <S.Field>
+                                        <S.Label><h5>Dieta</h5></S.Label>
+                                        <TextField
+                                            multiline
+                                            rows={80} 
+                                            id="outlined-multiline"
+                                            label="Dieta"
+                                            //onChange={(e) => [setObservation(e.target.value), setError("")]}
+                                            sx={{ width: '800px' }}
+                                        />
+                                    </S.Field>
                                 )}
+
+                               
 
                                 <S.Field>
                                     <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
