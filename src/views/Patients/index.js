@@ -1,10 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import * as S from './styles';
-import { Link, useNavigate } from "react-router-dom";
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import logoImage from '../../assets/logo.jpg';
 import api from '../../service/api';
 import SidebarHome from '../../components/SidebarHome';
 
@@ -15,38 +12,7 @@ const Patients = () => {
     const [name, setName] = useState([]);
 
     const handleRowClick: GridEventListener<'rowClick'> = (params) => {
-        // setFocusedInvest(params.row.id);
-        // setFocusedInvestMaxAmount(params.row.maxAmount);
-
-        // api.get(`/DistributionWhereInvest/` + whereInvestId, { 'headers': { 'Authorization': token } })
-        // .then(response=> {
-        //     var rowsAllocation = [];
-        //     var totalUsado = 0;
-        //     if (response.data.jsonDistributionWhereInvests) {
-        //         response.data.jsonDistributionWhereInvests.forEach(element => {
-        //             if (element.idWhereInvestAllocation === params.row.id) {
-        //                 totalUsado = totalUsado + element.amountUsed;
-        //                 rowsAllocation.push({
-        //                     id: element.id,
-        //                     description: element.description,
-        //                     amount: element.amount,
-        //                     amountUsed: element.amountUsed,
-        //                     investExpense: element.investExpense,
-        //                     idWhereInvestAllocation: element.idWhereInvestAllocation
-        //                   })
-        //             }
-                    
-        //         });
-        //     }
-
-        //     if (totalUsado > params.row.maxAmount) {
-        //         setMessageDistribution('Cuidado! Seus gastos estão excedendo os valores do seu planejamento para esta alocação ');
-        //     } else {
-        //         setMessageDistribution('');
-        //     }
-
-        //     setRowsAllocation(rowsAllocation);
-        // })
+        
         
     };
 
@@ -83,27 +49,7 @@ const Patients = () => {
 
     const handleSignin = async (event) => {
       
-        // if (!username || !password) {
-        //   setError("Preencha todos os campos");
-        //   return;
-        // }
-  
-        // var token = '';
-        // await api.post(`/api/auth/`, {
-        //     username: username,
-        //     password: password
-        // })
-        // .then(response => {
-        //             token = response.data;
-        // }).catch(err => {
-        //     setError('Usuario nao encontrado')
-        // })        
-  
-        // console.log(token);
-        // if (token) {
-        //     //await signin(email, token);
-        //     navigate('/home')
-        // }
+        
           
     };  
     

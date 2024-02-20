@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+
 import TextField from '@mui/material/TextField';
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,43 +11,54 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Painel1 = styled.div`
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: 70%;
-  margin: 50px auto;
-  margin-left: 450px;
-  position: relative;
-  height: 100px;
+export const Field = styled.div`
+  margin: 90px 20px 90px 40px; /* Ajuste conforme necessário */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
   button {
-    width: 150px;
-    background-color: #B66DFF;
+    background: linear-gradient(90deg,#da8cff,#9a55ff);
     height: 50px;
     color: white;
-    padding: 8px 8px;
+    padding: 11px 15px;
     border-radius: .1875rem;
     border:none;
     outline: 0;
     text-transform: uppercase;
     cursor: pointer;
     box-shadow: 0px 2px 2px lightgray;
-    transition: ease background-color 250ms;
+    transition: background-color 0.3s ease;
     font-size: .875rem;
     font-weight: 700;
     font-family: Ubuntu,sans-serif;
     &:hover {
-      background-color: #A347FF;
-    }
-  }
-  h2 {
-    font-family: 'Ubuntu',sans-serif;
+      background: linear-gradient(90deg, #c987ff, #8760ff);
+    };
+  };
 
-    font-size: 1.0rem;
+  TextField {
+
   }
-  
+`;
+
+export const Label = styled.h5`
+  margin: 0px 00px 00px 00px;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 400;
+  font-size: .875rem;
+  text-shadow: none;
+  box-sizing: border-box;
+  color: #343a40;
+  line-height: 1;
+`;
+
+export const FieldTitle = styled.h2`
+  margin-bottom: 20px; 
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: Ubuntu,sans-serif;
+}
 `;
 
 export const Painel2 = styled.div`

@@ -17,6 +17,7 @@ import { Button } from 'react-bootstrap';
 import Autocomplete from '@mui/material/Autocomplete';
 import api from '../../service/api';
 import { useHistory } from 'react-router-dom';
+import Historico from '../../components/Historico';
 
 
 
@@ -237,7 +238,7 @@ const PatientData = () => {
                         </TabPanel>
 
                         <TabPanel value="6">
-                            Item Three
+                            <Historico></Historico>
                         </TabPanel>
                     </TabContext>
                 </Box>
