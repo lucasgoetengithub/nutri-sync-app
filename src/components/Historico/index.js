@@ -4,31 +4,73 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Collapse from '@mui/material/Collapse';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import { DataGrid, GridColumns, GridEventListener, GridCellParams } from '@mui/x-data-grid';
+
+
+const columns: GridColumns = [
+    { 
+        field: "description", 
+        headerName: "Alocação", 
+        width: 180, 
+        editable: true 
+    },
+];
 
 const Historico = () => {
     const [open, setOpen] = useState(false);
     const [rows, setRows] = useState([]);
-    const nomesLista = ['Torax', 'Biceps', 'Triceps'];
-    const informacoesLista = [
-        // Adicione suas informações aqui
-        { nome: 'Torax', valor1: 10, valor2: 20, valor3: 30, valor2: 20, valor3: 30, valor2: 20, valor3: 30, valor2: 20, valor3: 30 },
-        { nome: 'Biceps', valor1: 15, valor2: 25, valor3: 35, valor2: 20, valor3: 30, valor2: 20, valor3: 30, valor2: 20, valor3: 30 },
-        { nome: 'Triceps', valor1: 12, valor2: 22, valor3: 32, valor2: 20, valor3: 30, valor2: 20, valor3: 30, valor2: 20, valor3: 30 },
+    const dadosLista = [
+        { nome: 'Ombro', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Torax', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Braço', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Antebraço', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Cintura', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Quadril', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Coxa', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Panturrilha', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] }
     ];
+
+    const handleCellEditCommit = (params: GridCellParams) => {
+        
+    }
+
+    const handleRowClick: GridEventListener<'rowClick'> = (params) => {
+       
+    };
+    
 
     const handleDisclosureClick = () => {
         setOpen(!open);
     };
 
     useEffect(() => {
-        setRows(informacoesLista);
+        const rowsAllocation = dadosLista.map((item, index) => {
+            const row = {
+                id: index + 1,
+                description: item.nome,
+            };
+
+            item.valores.forEach((valor, i) => {
+                row[`valor${i + 1}`] = valor;
+            });
+
+            return row;
+        });
+
+        setRows(rowsAllocation);
     }, []);
+
+    const columns: GridColumns = [
+        { field: 'description', headerName: 'Nome', width: 180 },
+        ...dadosLista.length > 0
+            ? dadosLista[0].valores.map((valor, index) => ({
+                field: `valor${index + 1}`,
+                headerName: `Valor ${index + 1}`,
+                width: 180,
+                editable: true,
+            }))
+            : [],
+    ];
 
     return (
         <>
@@ -40,7 +82,7 @@ const Historico = () => {
                     </Typography>
                 </Box>
                 <Collapse in={open}>
-                    <h1>Teste</h1>
+                    <DataGrid editMode="cell" hideFooter='true' rows={rows} columns={columns} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
                 </Collapse>
             </Stack>
         </>
