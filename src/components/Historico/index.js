@@ -78,7 +78,7 @@ const Historico = () => {
             <Stack spacing={2}>
                 <Box>
                     <Typography variant="h5" onClick={handleDisclosureClick} style={{ cursor: 'pointer' }}>
-                        Histórico
+                        Medidas
                     </Typography>
                 </Box>
                 <Collapse in={open}>
