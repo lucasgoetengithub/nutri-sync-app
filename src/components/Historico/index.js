@@ -19,8 +19,11 @@ const columns: GridColumns = [
 const Historico = () => {
     const [openMedida, setOpenMedida] = useState(false);
     const [openBioImpedancia, setOpenBioImpedancia] = useState(false);
+    const [openDobras, setOpenDobras] = useState(false);
+
     const [rows, setRows] = useState([]);
     const [rowsBioImpedancia, setRowsBioImpedancia] = useState([]);
+    const [rowsDobras, setRowsDobras] = useState([]);
 
 
 
@@ -49,6 +52,17 @@ const Historico = () => {
         { nome: 'Proteina', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
         { nome: 'Taxa metabolica basal', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
     ];
+    const dadosListaDobras = [
+        { nome: 'Tríceps', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Subescapular', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Bíceps', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Axiliar Média', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Toracica', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Supra Iliaca', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Supra Espinal', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Coxa', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+        { nome: 'Panturrilha Medial', valores: [10, 10, 10, 10, 10, 10, 10, 10, 10] },
+    ];
 
     const handleCellEditCommit = (params: GridCellParams) => {
         
@@ -65,6 +79,10 @@ const Historico = () => {
 
     const handleDisclosureBioImpedanciaClick = () => {
         setOpenBioImpedancia(!openBioImpedancia);
+    };
+
+    const handleDisclosureDobrasClick = () => {
+        setOpenDobras(!openDobras);
     };
 
     function montaDadosMedidas() {
@@ -101,9 +119,27 @@ const Historico = () => {
         setRowsBioImpedancia(rowsBioImpedancia);
     }
 
+    function montaDadosDobras() {
+        const rowsDobras = dadosListaDobras.map((item, index) => {
+            const row = {
+                id: index + 1,
+                description: item.nome,
+            };
+
+            item.valores.forEach((valor, i) => {
+                row[`valor${i + 1}`] = valor;
+            });
+
+            return row;
+        });
+
+        setRowsDobras(rowsDobras);
+    }
+
     useEffect(() => {
         montaDadosMedidas();
         montaDadosBioImpedancia();
+        montaDadosDobras();
     }, []);
 
     const columns: GridColumns = [
@@ -122,6 +158,18 @@ const Historico = () => {
         { field: 'description', headerName: 'Nome', width: 180 },
         ...dadosListaBioImpedancia.length > 0
             ? dadosListaBioImpedancia[0].valores.map((valor, index) => ({
+                field: `valor${index + 1}`,
+                headerName: `Valor ${index + 1}`,
+                width: 180,
+                editable: true,
+            }))
+            : [],
+    ];
+
+    const columnsDobras: GridColumns = [
+        { field: 'description', headerName: 'Nome', width: 180 },
+        ...dadosListaDobras.length > 0
+            ? dadosListaDobras[0].valores.map((valor, index) => ({
                 field: `valor${index + 1}`,
                 headerName: `Valor ${index + 1}`,
                 width: 180,
@@ -150,6 +198,15 @@ const Historico = () => {
                 </Box>
                 <Collapse in={openBioImpedancia}>
                     <DataGrid editMode="cell" hideFooter='true' rows={rowsBioImpedancia} columns={columnsBioImpedancia} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
+                </Collapse>
+
+                <Box>
+                    <Typography variant="h5" onClick={handleDisclosureDobrasClick} style={{ cursor: 'pointer' }}>
+                        Dobras
+                    </Typography>
+                </Box>
+                <Collapse in={openDobras}>
+                    <DataGrid editMode="cell" hideFooter='true' rows={rowsDobras} columns={columnsDobras} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
                 </Collapse>
             </Stack>
         </>
