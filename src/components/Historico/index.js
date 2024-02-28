@@ -183,7 +183,10 @@ const Historico = () => {
             <S.GlobalStyle />
             <Stack spacing={2}>
                 <Box>
-                    <Typography variant="h5" onClick={handleDisclosureMedidaClick} style={{ cursor: 'pointer' }}>
+                    <Typography variant="h5" onClick={handleDisclosureMedidaClick} style={{ cursor: 'pointer' }} style={{
+                            cursor: 'pointer',
+                            backgroundColor:  '#FFE6F8', // Adicione essa linha
+                        }}>
                         Medidas
                     </Typography>
                 </Box>
@@ -192,7 +195,10 @@ const Historico = () => {
                 </Collapse>
 
                 <Box>
-                    <Typography variant="h5" onClick={handleDisclosureBioImpedanciaClick} style={{ cursor: 'pointer' }}>
+                    <Typography variant="h5" onClick={handleDisclosureBioImpedanciaClick} style={{ cursor: 'pointer' }} style={{
+                            cursor: 'pointer',
+                            backgroundColor:  '#FFE6F8', // Adicione essa linha
+                        }}>
                         Bioimpedancia
                     </Typography>
                 </Box>
@@ -201,7 +207,10 @@ const Historico = () => {
                 </Collapse>
 
                 <Box>
-                    <Typography variant="h5" onClick={handleDisclosureDobrasClick} style={{ cursor: 'pointer' }}>
+                    <Typography variant="h5" onClick={handleDisclosureDobrasClick} style={{ cursor: 'pointer' }} style={{
+                            cursor: 'pointer',
+                            backgroundColor:  '#FFE6F8', // Adicione essa linha
+                        }}>
                         Dobras
                     </Typography>
                 </Box>
