@@ -17,6 +17,8 @@ const columns: GridColumns = [
 ];
 
 const Historico = () => {
+    const [panelHeight, setPanelHeight] = useState(200); 
+
     const [openMedida, setOpenMedida] = useState(false);
     const [openBioImpedancia, setOpenBioImpedancia] = useState(false);
     const [openDobras, setOpenDobras] = useState(false);
@@ -74,7 +76,15 @@ const Historico = () => {
     
 
     const handleDisclosureMedidaClick = () => {
+        if (!openMedida) {
+            setPanelHeight((prevPanelHeight) => {
+                let newPanelHeight = 0;
+                newPanelHeight = 200 + 465;
+                return newPanelHeight;
+            });
+        }
         setOpenMedida(!openMedida);
+        
     };
 
     const handleDisclosureBioImpedanciaClick = () => {
@@ -140,7 +150,8 @@ const Historico = () => {
         montaDadosMedidas();
         montaDadosBioImpedancia();
         montaDadosDobras();
-    }, []);
+
+    }, [panelHeight]);
 
     const columns: GridColumns = [
         { field: 'description', headerName: 'Nome', width: 180 },
@@ -181,43 +192,7 @@ const Historico = () => {
     return (
         <>
             <S.GlobalStyle />
-            <Stack spacing={2}>
-                <Box>
-                    <Typography variant="h5" onClick={handleDisclosureMedidaClick} style={{ cursor: 'pointer' }} style={{
-                            cursor: 'pointer',
-                            backgroundColor:  '#FFE6F8', // Adicione essa linha
-                        }}>
-                        Medidas
-                    </Typography>
-                </Box>
-                <Collapse in={openMedida}>
-                    <DataGrid editMode="cell" hideFooter='true' rows={rows} columns={columns} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
-                </Collapse>
-
-                <Box>
-                    <Typography variant="h5" onClick={handleDisclosureBioImpedanciaClick} style={{ cursor: 'pointer' }} style={{
-                            cursor: 'pointer',
-                            backgroundColor:  '#FFE6F8', // Adicione essa linha
-                        }}>
-                        Bioimpedancia
-                    </Typography>
-                </Box>
-                <Collapse in={openBioImpedancia}>
-                    <DataGrid editMode="cell" hideFooter='true' rows={rowsBioImpedancia} columns={columnsBioImpedancia} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
-                </Collapse>
-
-                <Box>
-                    <Typography variant="h5" onClick={handleDisclosureDobrasClick} style={{ cursor: 'pointer' }} style={{
-                            cursor: 'pointer',
-                            backgroundColor:  '#FFE6F8', // Adicione essa linha
-                        }}>
-                        Dobras
-                    </Typography>
-                </Box>
-                <Collapse in={openDobras}>
-                    <DataGrid editMode="cell" hideFooter='true' rows={rowsDobras} columns={columnsDobras} onCellEditCommit={handleCellEditCommit}  experimentalFeatures={{ newEditingApi: true } } onRowClick={handleRowClick} />
-                </Collapse>
-            </Stack>
+            
         </>
     );
 };
