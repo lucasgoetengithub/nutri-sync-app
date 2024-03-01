@@ -107,6 +107,19 @@ const PatientData = () => {
     };
 
     const handleDisclosureBioImpedanciaClick = () => {
+        if (!openBioImpedancia) {
+            setPanelHeight((prevPanelHeight) => {
+                let newPanelHeight = panelHeight;
+                newPanelHeight = newPanelHeight + 550;
+                return newPanelHeight;
+            });
+        } else {
+            setPanelHeight((prevPanelHeight) => {
+                let newPanelHeight = panelHeight;
+                newPanelHeight = newPanelHeight - 550;
+                return newPanelHeight;
+            });
+        }
         setOpenBioImpedancia(!openBioImpedancia);
     };
 
