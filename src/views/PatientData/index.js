@@ -110,6 +110,23 @@ const PatientData = () => {
         if (!openBioImpedancia) {
             setPanelHeight((prevPanelHeight) => {
                 let newPanelHeight = panelHeight;
+                newPanelHeight = newPanelHeight + 700;
+                return newPanelHeight;
+            });
+        } else {
+            setPanelHeight((prevPanelHeight) => {
+                let newPanelHeight = panelHeight;
+                newPanelHeight = newPanelHeight - 700;
+                return newPanelHeight;
+            });
+        }
+        setOpenBioImpedancia(!openBioImpedancia);
+    };
+
+    const handleDisclosureDobrasClick = () => {
+        if (!openDobras) {
+            setPanelHeight((prevPanelHeight) => {
+                let newPanelHeight = panelHeight;
                 newPanelHeight = newPanelHeight + 550;
                 return newPanelHeight;
             });
@@ -120,10 +137,6 @@ const PatientData = () => {
                 return newPanelHeight;
             });
         }
-        setOpenBioImpedancia(!openBioImpedancia);
-    };
-
-    const handleDisclosureDobrasClick = () => {
         setOpenDobras(!openDobras);
     };
 
