@@ -196,6 +196,9 @@ const PatientData = () => {
         { label: 'The Godfather', year: 1972 }];
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        setOpenBioImpedancia(false);
+        setOpenDobras(false);
+        setOpenMedida(false);
         setValue(newValue);
 
         if (newValue === '1') {

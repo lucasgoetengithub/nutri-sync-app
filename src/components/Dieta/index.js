@@ -36,7 +36,7 @@ const Dieta = () => {
             <S.GlobalStyle />    
                 <S.FieldTitle>Dieta</S.FieldTitle>
                 <Stack width='600px' spacing={5} direction="column">
-                    <Stack width='100%' spacing={10} direction="row">
+                    <Stack width='100%' spacing={1} direction="row">
                         <Stack width='80%' spacing={1} direction="column">
                             <S.Field>
                                 <S.Label><h5>Refeição </h5></S.Label>
@@ -45,11 +45,11 @@ const Dieta = () => {
                                     id='outlined-required'
                                     label='Café da manha / almoço ...'
                                     onChange={(e) => handleInputChange(`campo${1 + 1}`, e.target.value)}
-                                    sx={{ width: '500px' }}
+                                    sx={{ width: '440px' }}
                                 />
                             </S.Field>
 
-                            <Stack width='600px' spacing={1} direction="collumn">
+                            <Stack width='600px' spacing={0.5} direction="collumn">
                                 <S.Field key={1}>
                                     <S.Label><h5>Porção (g) </h5></S.Label>
                                     <TextField
@@ -57,7 +57,7 @@ const Dieta = () => {
                                         id='outlined-required'
                                         label='Porção (g) '
                                         onChange={(e) => handleInputChange(`campo${1 + 1}`, e.target.value)}
-                                        sx={{ width: '100px'}}
+                                        sx={{ width: '80px'}}
                                     />
                                 </S.Field>
 
@@ -68,7 +68,7 @@ const Dieta = () => {
                                         disablePortal
                                         id="combo-box-demo"
                                         options={top100Films}
-                                        sx={{ width: '650px' }}
+                                        sx={{ width: '400px' }}
                                         renderInput={(params) => <TextField {...params} label="Alimento" />}
                                         />
                                         <S.Field>
@@ -81,51 +81,51 @@ const Dieta = () => {
 
                         <S.Field>
                             <S.Label><h5>Refeição</h5></S.Label>
-                            <Stack width='8000px' spacing={1} direction="row">
+                            <Stack width='700px' spacing={1} direction="row">
                                 <TextField
                                     multiline
                                     rows={6} 
                                     id="outlined-multiline"
                                     label="Refeição"
                                     //onChange={(e) => [setObservation(e.target.value), setError("")]}
-                                    sx={{ width: '500px' }}
+                                    sx={{ width: '100%' }}
                                 />
 
                                 <S.Field>
-                                    <Button variant="primary" type="submit" onClick={handleRegister}>Adicionar Refeição</Button>
+                                    <Button variant="primary" type="submit" onClick={handleRegister}>Adicionar</Button>
                                 </S.Field>
                             </Stack>                                
                         </S.Field>
                     </Stack>
                     
 
-                        <Stack width='200px' spacing={1} direction="row">
-                            <S.Field>
-                                <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
-                            </S.Field>
-                            
-                            <S.Field>
-                                <Button variant="primary" type="submit" onClick={handleRegister}>Salvar PDF</Button>
-                            </S.Field>
-                        </Stack>
-
-                        <S.Label><h5>Refeições</h5></S.Label>
+                    <Stack width='200px' spacing={1} direction="row">
+                        <S.Field>
+                            <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
+                        </S.Field>
                         
                         <S.Field>
-                            <S.Label><h5>Dieta</h5></S.Label>
-                            <TextField
-                                multiline
-                                rows={80} 
-                                id="outlined-multiline"
-                                label="Dieta"
-                                //onChange={(e) => [setObservation(e.target.value), setError("")]}
-                                sx={{ width: '800px' }}
-                            />
+                            <Button variant="primary" type="submit" onClick={handleRegister}>Salvar PDF</Button>
                         </S.Field>
+                    </Stack>
+
+                    <S.Label><h5>Refeições</h5></S.Label>
+                    
+                    <S.Field>
+                        <S.Label><h5>Dieta</h5></S.Label>
+                        <TextField
+                            multiline
+                            rows={80} 
+                            id="outlined-multiline"
+                            label="Dieta"
+                            //onChange={(e) => [setObservation(e.target.value), setError("")]}
+                            sx={{ width: '800px' }}
+                        />
+                    </S.Field>
                 </Stack>
         </>
     )
   
-  }
+}
   
   export default Dieta;
