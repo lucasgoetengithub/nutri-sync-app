@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import Tab from '@mui/material/Tab';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -8,25 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Ubuntu',sans-serif;
   }
-`;
-
-export const Painel1 = styled.div`
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: 60%;
-  margin: 90px auto;
-  margin-left: 30%;
-  position: relative;
-  height: 800px;
-  display: flex;
-  justify-content: center;
-`;
-
-
-export const StyledTab = styled(Tab)`
-&.Mui-selected {
-    border-bottom: 2px solid #B66DFF;
-}
 `;
 
 export const Field = styled.div`
@@ -60,8 +40,6 @@ export const Field = styled.div`
   }
 `;
 
-
-
 export const Label = styled.h5`
   margin: 0px 00px 00px 00px;
   font-family: 'Ubuntu',sans-serif;
@@ -79,4 +57,13 @@ export const FieldTitle = styled.h2`
   font-weight: 500;
   font-family: Ubuntu,sans-serif;
 }
+`;
+
+export const FieldSelect = styled.div`
+  margin: 90px 20px 90px 40px; /* Ajuste conforme necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  
 `;
