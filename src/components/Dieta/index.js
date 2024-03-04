@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from 'react-bootstrap';
 import Autocomplete from '@mui/material/Autocomplete';
 import api from '../../service/api';
+import Card from '../Card';
 
 
 const Dieta = () => {
@@ -38,16 +39,39 @@ const Dieta = () => {
                 <Stack width='600px' spacing={5} direction="column">
                     <Stack width='100%' spacing={1} direction="row">
                         <Stack width='80%' spacing={1} direction="column">
-                            <S.Field>
-                                <S.Label><h5>Refeição </h5></S.Label>
-                                <TextField
-                                    required
-                                    id='outlined-required'
-                                    label='Café da manha / almoço ...'
-                                    onChange={(e) => handleInputChange(`campo${1 + 1}`, e.target.value)}
-                                    sx={{ width: '440px' }}
-                                />
-                            </S.Field>
+
+                            <Stack width='80%' spacing={1} direction="row">
+                                <S.Field>
+                                    <S.Label><h5>Refeição </h5></S.Label>
+                                    <TextField
+                                        required
+                                        id='outlined-required'
+                                        label='Café da manha / almoço ...'
+                                        onChange={(e) => handleInputChange(`campo${1 + 1}`, e.target.value)}
+                                        sx={{ width: '335px' }}
+                                    />
+                                </S.Field>
+
+                                <S.Field>
+                                    <S.Label><h5>Horario </h5></S.Label>
+                                    <TextField
+                                        required
+                                        id="outlined-required"
+                                        label="Horário"
+                                        type="time"
+                                        defaultValue="00:30"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        inputProps={{
+                                            step: 300, // 5 min
+                                        }}
+                                        onChange={(e) => handleInputChange(`horario`, e.target.value)}
+                                        sx={{ width: '100px' }}
+                                    />
+                                </S.Field>
+                            </Stack>
+                            
 
                             <Stack width='600px' spacing={0.5} direction="collumn">
                                 <S.Field key={1}>
@@ -99,6 +123,21 @@ const Dieta = () => {
                     </Stack>
                     
 
+                    
+
+                    
+                </Stack>
+
+                <S.Label><h5>Refeições</h5></S.Label>
+                <S.CardsArea >
+                    <Card></Card>
+                    <Card></Card>
+                    <Card></Card>
+                </S.CardsArea>
+                    
+
+                    
+                <S.Field>
                     <Stack width='200px' spacing={1} direction="row">
                         <S.Field>
                             <Button variant="primary" type="submit" onClick={handleRegister}>Salvar</Button>
@@ -107,22 +146,18 @@ const Dieta = () => {
                         <S.Field>
                             <Button variant="primary" type="submit" onClick={handleRegister}>Salvar PDF</Button>
                         </S.Field>
-                    </Stack>
+                    </Stack>     
 
-                    <S.Label><h5>Refeições</h5></S.Label>
-                    
-                    <S.Field>
-                        <S.Label><h5>Dieta</h5></S.Label>
-                        <TextField
-                            multiline
-                            rows={80} 
-                            id="outlined-multiline"
-                            label="Dieta"
-                            //onChange={(e) => [setObservation(e.target.value), setError("")]}
-                            sx={{ width: '800px' }}
-                        />
-                    </S.Field>
-                </Stack>
+                    <S.Label><h5>Dieta</h5></S.Label>
+                    <TextField
+                        multiline
+                        rows={80} 
+                        id="outlined-multiline"
+                        label="Dieta"
+                        //onChange={(e) => [setObservation(e.target.value), setError("")]}
+                        sx={{ width: '800px' }}
+                    />
+                </S.Field>
         </>
     )
   

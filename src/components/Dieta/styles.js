@@ -67,3 +67,10 @@ export const FieldSelect = styled.div`
   width: 100%;
   
 `;
+
+export const CardsArea = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+`;
