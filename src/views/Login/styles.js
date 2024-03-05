@@ -81,5 +81,3 @@ export const Panel5 = styled.div`
   top: 500px;
   right: 513px;
 `
-
-

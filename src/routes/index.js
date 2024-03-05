@@ -8,6 +8,7 @@ import Home from '../views/home';
 import Patients from '../views/Patients';
 import NewPatient from '../views/NewPatient'; 
 import PatientData from '../views/PatientData';
+import NewFood from '../views/NewFood';
 
 const Private = ({ Item }) => {
     // const user = JSON.parse(localStorage.getItem("user_token"));    
@@ -35,6 +36,7 @@ export default function Routers() {
                     <Route path="/" element={<Home />} />
                     <Route path="/consultar-pacientes" element={<Patients />} />
                     <Route path="/novo-paciente" element={<NewPatient />} />
+                    <Route path="/novo-alimento" element={<NewFood />} />
                     <Route path="/dados-paciente" element={<PatientData />} />
                 </Routes>
         </Fragment>
