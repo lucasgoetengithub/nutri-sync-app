@@ -12,20 +12,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NewFood = () => {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [age, setAge] = useState("");
-    const [dateBirth, setDateBirth] = useState("");
-    const [address, setAddress] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [porcao, setPorcao] = useState("");
+    const [kcal, setKcal] = useState("");
+    const [carboidratos, setCarboidratos] = useState("");
+    const [proteinas, setProteinas] = useState("");
+    const [fibras, setFibras] = useState("");
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
     const [error, setError] = useState("");
-    const [contato, setContato] = useState("");
-    const [gender, setGender] = useState("");
-    const [cidade, setCidade] = useState("");
-    const [cargo, setCargo] = useState("");
-    const [observation, setObservation] = useState("");
     const navigate = useNavigate();
 
 
@@ -59,31 +52,7 @@ const NewFood = () => {
 
 
     const handleRegister = async (event) => {
-        let usernamevar = generateUserName(name);
-        let passwordvar = generatePassword(dateBirth);
-        let datevar = convertDateFormat(dateBirth);
-
-        await api.post(`/api/patients/`, {
-            "username": usernamevar,
-            "name": name,
-            "email": email,
-            "password": passwordvar,
-            "age": age,
-            "dateOfBirth": datevar,
-            "address": address,
-            "city": cidade,
-            "occupation": cargo,
-            "obs": observation,
-            "phoneContact": contato,
-            "gender": gender,
-            "nutriID":1
-        })
-        .then(response => {
-            navigate('/home')
-        })
-        .catch(err => {
-            console.log(err)
-        })    
+        
     }
 
 
@@ -94,7 +63,7 @@ const NewFood = () => {
             <S.Container>
                 <Stack width='600px' spacing={2} direction="column" margin='20px 10px 10px 40px'>
                     <S.Field>
-                        <S.FieldTitle>Cadastrando novo paciente</S.FieldTitle>
+                        <S.FieldTitle>Cadastrando novo alimento</S.FieldTitle>
                     </S.Field>
 
                     <Stack width='100%' spacing={5} direction="row" margin='20px 10px 10px 40px'>
@@ -111,13 +80,13 @@ const NewFood = () => {
                         </S.Field>
 
                         <S.Field>
-                            <S.Label><h5>Gênero</h5></S.Label>
+                            <S.Label><h5>Porção (g)</h5></S.Label>
                             
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Gênero"
-                                onChange={(e) => [setGender(e.target.value), setError("")]}
+                                label="Porção (g)"
+                                onChange={(e) => [setPorcao(e.target.value), setError("")]}
                                 sx={{ width: '200px' }}
                             />
                         </S.Field>
@@ -125,118 +94,61 @@ const NewFood = () => {
                     
                     <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
                         <S.Field>
-                            <S.Label><h5>Email </h5></S.Label>
+                            <S.Label><h5>Kcal (g)</h5></S.Label>
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Email"
-                                onChange={(e) => [setEmail(e.target.value), setError("")]}
-                                sx={{ width: '500px' }} 
+                                label="Kcal (g)"
+                                onChange={(e) => [setKcal(e.target.value), setError("")]}
+                                sx={{ width: '350px' }} 
                             />
                                 
                         </S.Field>
 
                         <S.Field>
-                            <S.Label><h5>Contato</h5></S.Label>
-                            <InputMask
-                                mask="(99) 99999-9999"
-                                label="(99) 99999-9999"
-                                maskChar="_"
-                                value={contato}
-                                onChange={(e) => setContato(e.target.value)}
-                            >
-                                {(inputProps) => <TextField {...inputProps} sx={{ width: '200px' }} />}
-                            </InputMask>
-                        </S.Field>
-
-                    </Stack>
-
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
-                        <S.Field>
-                            <S.Label><h5>Data de nascimento </h5></S.Label>
-                            
-                            <InputMask
-                                mask="99/99/9999"
-                                label="00/00/0000"
-                                maskPlaceholder="_"
-                                value={dateBirth}
-                                onChange={(e) => [setDateBirth(e.target.value), setError("")]}
-                            >
-                                {(inputProps) => <TextField {...inputProps} sx={{ width: '500px' }} />}
-                            </InputMask>
-                        </S.Field>
-
-                        <S.Field>
-                            <S.Label><h5>Idade </h5></S.Label>
-                            
+                            <S.Label><h5>Carboidratos (g)</h5></S.Label>
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Idade"
-                                onChange={(e) => [setAge(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}
+                                label="Carboidratos (g)"
+                                onChange={(e) => [setCarboidratos(e.target.value), setError("")]}
+                                sx={{ width: '350px' }} 
                             />
+                                
                         </S.Field>
+
                     </Stack>
-
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
-                        <S.Field>
-                            <S.Label><h5>Endereço </h5></S.Label>
-                            
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Endereço"
-                                onChange={(e) => [setAddress(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
-                        </S.Field>
-
-                        <S.Field>
-                            <S.Label><h5>Cidade </h5></S.Label>
-                            
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Cidade"
-                                onChange={(e) => [setCidade(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}
-                            />
-                        </S.Field>
-                    </Stack>
-
-                    <S.Field>
-                        <S.Label><h5>Emprego / Cargo </h5></S.Label>
-                        
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Emprego / Cargo "
-                            onChange={(e) => [setCargo(e.target.value), setError("")]}
-                            sx={{ width: '500px' }}
-                        />
-                    </S.Field>
 
                     <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
                     <S.Field>
-                        <S.Label><h5>Observação</h5></S.Label>
-                        <TextField
-                        multiline
-                        rows={9}
-                        id="outlined-multiline"
-                        label="Observação"
-                        onChange={(e) => [setObservation(e.target.value), setError("")]}
-                        sx={{ width: '740px' }}
-                        />
-                    </S.Field>
+                            <S.Label><h5>Proteinas (g)</h5></S.Label>
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Proteinas (g)"
+                                onChange={(e) => [setProteinas(e.target.value), setError("")]}
+                                sx={{ width: '350px' }} 
+                            />
+                                
+                        </S.Field>
+
+                        <S.Field>
+                            <S.Label><h5>Fibras (g)</h5></S.Label>
+                            
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Fibras (g)"
+                                onChange={(e) => [setFibras(e.target.value), setError("")]}
+                                sx={{ width: '350px' }}
+                            />
+                        </S.Field>
                     </Stack>
 
                     <S.Field>
                         <Button variant="primary" type="submit" onClick={handleRegister}>Cadastrar</Button>
                     </S.Field>
-                    
                 </Stack>
-                
             </S.Container>
         </>
     )
