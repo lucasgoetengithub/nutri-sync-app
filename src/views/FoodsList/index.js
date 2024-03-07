@@ -19,26 +19,27 @@ const FoodsList = () => {
     
     useEffect(() =>{
         // api.get(`api/patients/?nutriID=1&name=teste teste`, {})
-        api.get(`api/patients/?nutriID=1`, {})
-        .then(response => {
-            console.log(response.data);
-            var rowsAllocation = [];
+        // api.get(`api/patients/?nutriID=1`, {})
+        // .then(response => {
+        //     console.log(response.data);
+        //     var rowsAllocation = [];
             
-            response.data.forEach(element => {
-                console.log(element.id);
-                rowsAllocation.push({
-                    id: element.id,
-                    nome: element.name,
-                    email: element.email,
-                    telefone: element.phoneContact
-                });
-            });
+        //     response.data.forEach(element => {
+        //         console.log(element.id);
+        //         rowsAllocation.push({
+        //             id: element.id,
+        //             nome: element.name,
+        //             kcal: element.Kcal,
+        //             proteina: element.Proteina,
+        //             fibra: element.Fibra
+        //         });
+        //     });
 
-            setRows(rowsAllocation);
-        })
-        .catch(err => {
-            console.log(err)
-        })      
+        //     setRows(rowsAllocation);
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })      
     });
 
     function handleKeyPress(event) {
@@ -63,7 +64,7 @@ const FoodsList = () => {
             <S.Painel1>
                 
                 <Stack width='80%' spacing={1} direction="column">
-                    <h2>Filter patient by </h2>
+                    <h2>Filtrando alimento </h2>
                     <Stack width='70%' spacing={3.8} direction="row">
                         <S.StyledTextField
                             required
@@ -85,8 +86,9 @@ const FoodsList = () => {
                         <S.TableRow>
                             <S.TableHeader width="80px">id</S.TableHeader>
                             <S.TableHeader width="430px">Nome</S.TableHeader>
-                            <S.TableHeader width="430px">E-mail</S.TableHeader>
-                            <S.TableHeader width="200px">Telefone</S.TableHeader>
+                            <S.TableHeader width="430px">Kcal</S.TableHeader>
+                            <S.TableHeader width="200px">Proteina</S.TableHeader>
+                            <S.TableHeader width="200px">Fibra</S.TableHeader>
                         </S.TableRow>
                     </thead>
                     <tbody>
@@ -94,8 +96,9 @@ const FoodsList = () => {
                         <S.TableRow key={index} even={index % 2 === 0}>
                             <S.TableCell width="80px">{item.id}</S.TableCell>
                             <S.TableCell width="430px">{item.nome}</S.TableCell>
-                            <S.TableCell width="430px">{item.email}</S.TableCell>
-                            <S.TableCell width="200px">{item.telefone}</S.TableCell>
+                            <S.TableCell width="430px">{item.Kcal}</S.TableCell>
+                            <S.TableCell width="200px">{item.Proteina}</S.TableCell>
+                            <S.TableCell width="200px">{item.Fibra}</S.TableCell>
                         </S.TableRow>
                         ))}
                     </tbody>
