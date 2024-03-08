@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 
-const NewScheduling = () => {
+const NewPatient = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -243,4 +243,4 @@ const NewScheduling = () => {
   
 }
   
-export default NewScheduling;
+export default NewPatient;
