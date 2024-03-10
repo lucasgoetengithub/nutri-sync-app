@@ -10,7 +10,7 @@ import NewPatient from '../views/NewPatient';
 import PatientData from '../views/PatientData';
 import NewFood from '../views/NewFood';
 import FoodsList from '../views/FoodsList';
-import NewScheduling from '../views/NewPatient';
+import NewScheduling from '../views/NewScheduling';
 
 const Private = ({ Item }) => {
     // const user = JSON.parse(localStorage.getItem("user_token"));    

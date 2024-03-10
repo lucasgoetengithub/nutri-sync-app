@@ -17,7 +17,7 @@ export const Container = styled.div`
   margin: 90px auto;
   margin-left: 30%;
   position: relative;
-  height: 450px;
+  height: 1100px;
   display: flex;
   justify-content: flex-start;
 `;
