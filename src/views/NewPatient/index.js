@@ -94,29 +94,29 @@ const NewScheduling = () => {
             <S.Container>
                 <Stack width='600px' spacing={2} direction="column" margin='20px 10px 10px 40px'>
                     <S.Field>
-                        <S.FieldTitle>Cadastrando novo paciente</S.FieldTitle>
+                        <S.FieldTitle>Agendamento</S.FieldTitle>
                     </S.Field>
 
                     <Stack width='100%' spacing={5} direction="row" margin='20px 10px 10px 40px'>
                         <S.Field>
-                            <S.Label><h5>Nome </h5></S.Label>
+                            <S.Label><h5>Nome paciente</h5></S.Label>
                             
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Nome"
+                                label="Nome paciente"
                                 onChange={(e) => [setName(e.target.value), setError("")]}
                                 sx={{ width: '500px' }} 
                             />
                         </S.Field>
 
                         <S.Field>
-                            <S.Label><h5>Gênero</h5></S.Label>
+                            <S.Label><h5>Hora</h5></S.Label>
                             
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Gênero"
+                                label="Hora"
                                 onChange={(e) => [setGender(e.target.value), setError("")]}
                                 sx={{ width: '200px' }}
                             />
@@ -125,114 +125,23 @@ const NewScheduling = () => {
                     
                     <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
                         <S.Field>
-                            <S.Label><h5>Email </h5></S.Label>
+                            <S.Label><h5>Data </h5></S.Label>
                             <TextField
                                 required
                                 id="outlined-required"
-                                label="Email"
+                                label="Data"
                                 onChange={(e) => [setEmail(e.target.value), setError("")]}
                                 sx={{ width: '500px' }} 
                             />
                                 
                         </S.Field>
 
-                        <S.Field>
-                            <S.Label><h5>Contato</h5></S.Label>
-                            <InputMask
-                                mask="(99) 99999-9999"
-                                label="(99) 99999-9999"
-                                maskChar="_"
-                                value={contato}
-                                onChange={(e) => setContato(e.target.value)}
-                            >
-                                {(inputProps) => <TextField {...inputProps} sx={{ width: '200px' }} />}
-                            </InputMask>
-                        </S.Field>
-
                     </Stack>
 
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
-                        <S.Field>
-                            <S.Label><h5>Data de nascimento </h5></S.Label>
-                            
-                            <InputMask
-                                mask="99/99/9999"
-                                label="00/00/0000"
-                                maskPlaceholder="_"
-                                value={dateBirth}
-                                onChange={(e) => [setDateBirth(e.target.value), setError("")]}
-                            >
-                                {(inputProps) => <TextField {...inputProps} sx={{ width: '500px' }} />}
-                            </InputMask>
-                        </S.Field>
-
-                        <S.Field>
-                            <S.Label><h5>Idade </h5></S.Label>
-                            
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Idade"
-                                onChange={(e) => [setAge(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}
-                            />
-                        </S.Field>
-                    </Stack>
-
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
-                        <S.Field>
-                            <S.Label><h5>Endereço </h5></S.Label>
-                            
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Endereço"
-                                onChange={(e) => [setAddress(e.target.value), setError("")]}
-                                sx={{ width: '500px' }}
-                            />
-                        </S.Field>
-
-                        <S.Field>
-                            <S.Label><h5>Cidade </h5></S.Label>
-                            
-                            <TextField
-                                required
-                                id="outlined-required"
-                                label="Cidade"
-                                onChange={(e) => [setCidade(e.target.value), setError("")]}
-                                sx={{ width: '200px' }}
-                            />
-                        </S.Field>
-                    </Stack>
+                    
 
                     <S.Field>
-                        <S.Label><h5>Emprego / Cargo </h5></S.Label>
-                        
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Emprego / Cargo "
-                            onChange={(e) => [setCargo(e.target.value), setError("")]}
-                            sx={{ width: '500px' }}
-                        />
-                    </S.Field>
-
-                    <Stack width='600px' spacing={5} direction="row" margin='20px 10px 10px 40px'>
-                    <S.Field>
-                        <S.Label><h5>Observação</h5></S.Label>
-                        <TextField
-                        multiline
-                        rows={9}
-                        id="outlined-multiline"
-                        label="Observação"
-                        onChange={(e) => [setObservation(e.target.value), setError("")]}
-                        sx={{ width: '740px' }}
-                        />
-                    </S.Field>
-                    </Stack>
-
-                    <S.Field>
-                        <Button variant="primary" type="submit" onClick={handleRegister}>Cadastrar</Button>
+                        <Button variant="primary" type="submit" onClick={handleRegister}>Salvar agendamento</Button>
                     </S.Field>
                     
                 </Stack>
