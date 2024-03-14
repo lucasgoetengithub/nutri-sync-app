@@ -118,10 +118,14 @@ const NewScheduling = () => {
                             <S.Label><h5>Data </h5></S.Label>
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="date"
+                                type="date"
                                 label="Data"
+                                InputLabelProps={{
+                                    shrink: true, // Isso garante que o label não sobreponha o texto quando uma data é selecionada
+                                }}
                                 onChange={(e) => [setEmail(e.target.value), setError("")]}
-                                sx={{ width: '200px' }} 
+                                sx={{ width: '200px' }}
                             />
                                 
                         </S.Field>
